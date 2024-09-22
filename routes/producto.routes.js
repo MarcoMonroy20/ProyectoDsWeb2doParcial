@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAllProductos, addProducto, getProductoPorID, updateProducto } = require('../controllers/producto.controller');
+const { getAllProductos, addProducto, getProductoPorID, updateProducto, deleteProducto} = require('../controllers/producto.controller');
 
 // Mostrar todos los productos
 router.get('/productos', getAllProductos);
@@ -15,9 +15,6 @@ router.get('/producto/:id', getProductoPorID);
 router.put('/updateProducto/:id', updateProducto);
 
 // Eliminar un producto 
-router.delete('/producto/:id', (req, res) => {
- 
-  res.send('Eliminar producto');
-});
+router.delete('/deleteProducto/:id', deleteProducto);
 
 module.exports = router;
